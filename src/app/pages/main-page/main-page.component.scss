@@ -1,0 +1,33 @@
+app-main-header{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+
+}
+app-hidden-menu{
+  width: 10%;
+  text-align: center;
+}
+app-main-menu{
+  width: 28%;
+  text-align: center;
+}
+app-logo{
+  width: 27%;
+  text-align: center;
+}
+app-second-menu{
+  width: 20%;
+  text-align: center;
+}
+app-interactive-options{
+  width: 6%;
+  text-align: center;
+  margin-right: 7%;
+}

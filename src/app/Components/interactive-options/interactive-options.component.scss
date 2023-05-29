@@ -1,0 +1,43 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  :hover{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    span{
+      width: 1.5rem;
+      height: 1.5rem;
+    };
+    /*background-color: lighten($color: #747373, $amount: 1);*/
+  }
+  span{
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    margin-top: -1.5rem;
+    margin-left: 7.5rem;
+    font-size: 1.3rem;
+  }
+  span:hover{
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+}
+.car{
+  display: none;
+  width: 800%;
+}
+.container__shopping:hover .car{
+  display: block;
+  width: 800%;
+}

@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  align-items: end;
+  margin-left: 5rem;
+  img{
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  :hover{
+    cursor: pointer;
+    background-color: lighten($color: rgb(250, 237, 205), $amount: 0.2);
+  }
+p{
+  margin-right: 1rem;
+
+}
+
+}
+

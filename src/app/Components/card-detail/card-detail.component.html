@@ -1,0 +1,29 @@
+<section class="container">
+  <section class="container__image">
+    <img [src]="item.image" alt="imagen 1">
+    <button>VER MÁS</button>
+
+  </section>
+  <section class="container__body">
+    <span (click)="toHide()"><img src="../../../assets/Icons/cerrar.PNG" alt="Cerrar"></span>
+    <p>{{item.title}}</p>
+    <p>{{item.price}}</p>
+    <p>{{item.description}}</p>
+      <div class="container__body--size">
+        <p>TALLA: {{size}}</p>
+        <div class="container__body--size-values">
+          <p (click)="chooseSize('S')" [ngClass]="{'dark' : size=='S'}">S</p>
+          <p (click)="chooseSize('M')" [ngClass]="{'dark' : size=='M'}">M</p>
+          <p (click)="chooseSize('L')" [ngClass]="{'dark' : size=='L'}">L</p>
+        </div>
+      </div>
+      <div class="container__body--interactive">
+        <div>
+          <button class="clik" (click)="dis()" *ngIf="counter>1">-</button>
+          <button>{{counter}}</button>
+          <button class="clik"(click)="add()">+</button>
+        </div>
+        <button (click)="addToCar(item)">AGREGAR AL CARRITO</button>
+      </div>
+  </section>
+</section>

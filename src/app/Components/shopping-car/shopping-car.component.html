@@ -1,0 +1,19 @@
+<section class="container" *ngFor="let item of service.productsCard">
+  <section class="container__image">
+    <img [src]="item.image" alt="imagen 1">
+
+  </section>
+  <section class="container__body">
+      <span (click)="disToCar(item)"><img src="../../../assets/Icons/cerrar.PNG" alt="Cerrar"></span>
+      <p>{{item.title}}</p>
+      <p>{{item.price}}</p>
+      <p>{{item.size}}</p>
+      <div class="container__body--interactive">
+        <div>
+          <button class="clik" (click)="dis(item)">-</button>
+          <button>{{counter}}</button>
+          <button class="clik"(click)="add(item)">+</button>
+        </div>
+      </div>
+  </section>
+</section>

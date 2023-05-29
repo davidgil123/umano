@@ -1,0 +1,109 @@
+.container{
+  display: flex;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: -30%;
+  column-gap: normal;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+
+  &__image{
+    width: 50%;
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 3rem;
+    button{
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      width: 90%;
+    }
+    img{
+      width: 90%;
+      height: 90%;
+    }
+
+  }
+  &__body{
+    width: 50%;
+    text-align: left;
+    padding-top: 1rem;
+    span{
+      float: right;
+      margin-top: -1rem;
+      cursor: pointer;
+      img:hover{
+        width: 2.5rem;
+      }
+    }
+    p{
+      margin-top: 2rem;
+    }
+    &--interactive{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      div{
+        width: 30%;
+        height: 2rem;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-around;
+        button{
+          width: 30%;
+          background-color: transparent;
+          color: black;
+
+        }
+      }
+      button{
+        width: 100%;
+        height: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        background-color: rgb(79, 177, 79);
+        color: white;
+        cursor: pointer;
+
+      }
+      button:hover{
+        background-color: lighten($color:rgb(79, 177, 79), $amount: 25);
+        color: black;
+      }
+    }
+    &--size{
+      p{
+        margin-top: 1rem;
+      }
+      &-values{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1rem;
+        p{
+          border: 1px solid black;
+          width: 2rem;
+          height: 2rem;
+          text-align: center;
+          padding: 0.4rem;
+          border-radius: 50%;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        p:hover{
+          color: white;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+.clik:hover{
+  color: black;
+  cursor: pointer;
+}
+.dark{
+  color: white;
+  background-color: black;
+}

@@ -1,0 +1,22 @@
+<section class="main">
+  <section class="container" *ngFor="let product of products">
+    <img [src]="product.image" alt="Imagen 1" class="container__image">
+    <p>{{product.title}}</p>
+    <p>{{product.price|currency}}</p>
+    <div class="container__size">
+      <p>S</p>
+      <p>M</p>
+      <p>L</p>
+    </div>
+    <div class="container__icons">
+      <img src="../../../assets/Icons/Agregar al carro.png" alt="Imagen 1">
+      <button (click)="showDetail(product)"><img src="../../../assets/Icons/Detalle.png" alt="Imagen 1"></button>
+    </div>
+
+  </section>
+</section>
+
+
+<section class="container__detalle">
+  <app-card-detail *ngIf="service.detail" [item]="product"></app-card-detail>
+</section>

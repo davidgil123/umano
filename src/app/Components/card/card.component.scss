@@ -1,0 +1,62 @@
+.main{
+  display: flex;
+  column-gap: gap;
+  flex-wrap: wrap;
+}
+.container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  margin-left: 4rem;
+  flex-direction: column;
+  column-gap: gap;
+  row-gap: gap;
+  justify-content: center;
+  width: 20%;
+  height: auto;
+  z-index: -1;
+  :hover &__icons{
+      display: block;
+
+  }
+  &__image{
+    object-fit: contain;
+  }
+  &__size{
+    display: flex;
+    justify-content: space-around;
+  }
+  &__icons{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    margin-top: 6rem;
+    display: none;
+    img{
+      width: 1.8rem;
+      height: auto;
+      margin: 0.1rem;
+      cursor: pointer;
+    }
+  }
+  p{
+    text-align: center;
+    margin: 0.2rem;
+  }
+
+}
+
+.detalle{
+  margin-top: -20%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  app-card-detail{
+    width: 60%;
+    height: 80%;
+  }
+}
+
