@@ -1,14 +1,71 @@
+:host {
+  width: 40vw;
+  left: 30vw;
+  top: 10vh;
+}
+
+.main{
+  background-color: white;
+  color: black;
+  h1{
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.close{
+  cursor: pointer;
+  img:hover{
+    width: 2.5rem;
+  }
+}
+.envio{
+  width: 100%;
+  background-color: rgb(188, 184, 177);
+  text-align: center;
+  height: 2rem;
+  padding-top: 0.5rem;
+}
+.subtotal{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-weight: bold;
+  p{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+.pagar{
+  width: 70%;
+  height: 2rem;
+  margin-left: 15%;
+  margin-bottom: 1rem;
+  background-color: #faedcd;
+  font-weight: bold;
+}
+.descripcion{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .container{
   display: flex;
-  width: 140%;
-  margin-left: -15rem;
+  width: 100%;
+  margin-left: 0rem;
   margin-top: 0rem;
   column-gap: normal;
   flex-wrap: wrap;
   justify-content: center;
   background-color: white;
-  z-index: 99;
-  border-bottom: 1px solid rgb(188, 184, 177);
+
+  hr{
+    height: 1px;
+    background-color: #bcb8b1;
+    width: 90%;
+    margin-left: -1%;
+  }
 
   &__image{
     width: 30%;
@@ -42,6 +99,8 @@
 
     &--interactive{
       display: flex;
+      &__add{
+        display: flex;
       align-items: center;
       width: 100%;
       div{
@@ -55,8 +114,10 @@
           width: 30%;
           background-color: transparent;
           color: black;
-
         }
+
+      }
+
       }
       button{
         width: 100%;
@@ -106,7 +167,9 @@
   color: black;
   cursor: pointer;
 }
-.dark{
-  color: white;
-  background-color: black;
+hr{
+  height: 1px;
+  background-color: #bcb8b1;
+  width: 90%;
+  margin-left: 5%;
 }

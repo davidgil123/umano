@@ -1,8 +1,7 @@
 <section class="container">
   <img src="../../../assets/Icons/Icon-search.svg" alt="search">
   <section class="container__shopping">
-    <img src="../../../assets/Icons/icon-cart.svg" alt="cart">
-    <app-shopping-car class="car"></app-shopping-car>
+    <img src="../../../assets/Icons/icon-cart.svg" alt="car" (click)="service.showShoppingCar()">
   </section>
-  <span>{{service.productsCard.length}}</span>
+  <span>{{service.quantity}}</span>
 </section>

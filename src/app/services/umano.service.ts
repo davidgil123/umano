@@ -1,62 +1,48 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../interfaces/item';
-import { JsonPipe } from '@angular/common';
+import { Quantity } from '../interfaces/quantity';
+import { Size } from '../enums/size.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UmanoService {
   private _productsCar:Item []=[];
+  private _quantity: number = 0;
   total: number;
+  public get quantity(): number {
+    return this._quantity;
+  }
+  public isVisibleShoppingCar:boolean=false;
   public dark:boolean=false;
   public detail: boolean= false;
   private CARD_KEY:string="PRODUCTS"
   constructor() {
     this.total=0;
     this._productsCar=this.getcard();
-    this._productsCar[0]={
-      "id":"A1",
-      "title":"Camiseta Basica",
-      "price": 80000,
-      "image": "../../../assets/Image/1.PNG",
-      "size": "S",
-      "quantity": 1,
-      "description":"Camiseta verde pino Nuestra icónica camiseta de fit regular se" +
-      "renueva en color verde pino y con el logo de TRUE estampado al frente en tono blanco." +
-      "Está confeccionada en.",
-    };
-    this._productsCar[1]={
-      "id":"A2",
-      "title":"Crop Top",
-      "price": 70000,
-      "image": "../../../assets/Image/2.PNG",
-      "size": "M",
-      "quantity": 1,
-      "description":"Camiseta verde pino Nuestra icónica camiseta de fit regular se" +
-      "renueva en color verde pino y con el logo de TRUE estampado al frente en tono blanco." +
-      "Está confeccionada en.",
-    }
+    this.calcularTotal();
    }
   public get productsCard():Item[]{
     return [...this._productsCar];
   }
-  addToCar(item:Item){
-    const productIndex=this._productsCar.findIndex((cardItem)=>cardItem.id===item.id);
-    if(productIndex<0){
-      this._productsCar=[...this._productsCar,{...item,quantity:1}];
-    } else{
-      const cardCopy=this.productsCard;
-      item.id=item.id+Math.random();
-      cardCopy.push(item);
-      this._productsCar=cardCopy;
+  addToCar(item:Item, quantity: Quantity){
+    const product = this._productsCar.find(cardItem => cardItem.id === item.id);
+    if (!product) {
+      this._productsCar = [ ...this._productsCar, { ...item, quantity } ];
+    } else {
+      product.quantity.S += quantity.S;
+      product.quantity.M += quantity.M;
+      product.quantity.L += quantity.L;
     }
     this.saveCard();
     this.calcularTotal();
   }
+
   private saveCard(){
     const jsonCard=JSON.stringify(this._productsCar);
     localStorage.setItem(this.CARD_KEY,jsonCard);
   }
+
   private getcard():Item[]{
     const jsonCard= localStorage.getItem(this.CARD_KEY);
     if(!jsonCard){
@@ -69,18 +55,40 @@ export class UmanoService {
       return [];
     }
   }
-  disToCar(item:Item){
-    this._productsCar=this.productsCard.filter((producto)=>{
-      return producto.id!=item.id;
-    });
+
+  disToCar(item:Item, quantity: Quantity) {
+    item.quantity.S -= quantity.S;
+    item.quantity.M -= quantity.M;
+    item.quantity.L -= quantity.L;
+
+    if (item.quantity.S < 1 && item.quantity.M < 1 && item.quantity.L < 1) {
+      this._productsCar.splice(this._productsCar.indexOf(item), 1);
+    }
+
     this.saveCard();
     this.calcularTotal();
   }
+
+  disToCarAllOfItemSize(item:Item, size: Size){
+    item.quantity[size] = 0;
+    if (item.quantity.S < 1 && item.quantity.M < 1 && item.quantity.L < 1) {
+      this._productsCar.splice(this._productsCar.indexOf(item), 1);
+    }
+    this.saveCard();
+    this.calcularTotal();
+  }
+
   calcularTotal(){
-    this.total=0;
-    this.productsCard.map(({price,quantity})=>{
-      this.total=this.total+price*quantity;
-      return this.total;
+    this.total = 0;
+    this._quantity = 0;
+    this.productsCard.forEach(({price,quantity})=>{
+      this.total +=  (price * quantity.S) + (price * quantity.M) + (price * quantity.L);
+      this._quantity += quantity.S + quantity.M + quantity.L;
     });
   };
+
+  showShoppingCar(){
+    this.isVisibleShoppingCar=!this.isVisibleShoppingCar;
+    this.dark=!this.dark;
+  }
 }

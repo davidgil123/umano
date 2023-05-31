@@ -22,4 +22,19 @@ a{
   text-decoration: none;
 
 }
+.modal {
+  z-index: 999;
+  position: fixed;
+  width: 60vw;
+  top: 20vh;
+  left: 20vw;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
 @media (max-width:767px){}

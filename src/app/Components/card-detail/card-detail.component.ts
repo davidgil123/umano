@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Size } from 'src/app/enums/size.enum';
 import { Item } from 'src/app/interfaces/item';
+import { Quantity } from 'src/app/interfaces/quantity';
 import { UmanoService } from 'src/app/services/umano.service';
 
 @Component({
@@ -11,12 +13,13 @@ export class CardDetailComponent {
   @Input()
   item!:Item;
   counter: number=1;
-  size: string="";
+  sizes = {S: Size.S,M: Size.M,L: Size.L };
+  size: Size | null = null;
   constructor (private service:UmanoService){
 
   }
 
-  chooseSize(size:string){
+  chooseSize(size:Size){
     this.size=size;
 
   }
@@ -27,19 +30,19 @@ export class CardDetailComponent {
     if(this.counter>1){
       this.counter--;
     }
-
   }
+
   toHide(){
     this.service.dark=false;
     this.service.detail=false;
   }
-  addToCar(product:Item){
-    if(this.size){
-      product.size=this.size;
-    this.service.addToCar(product);
-    console.log("Se a agregado el siguiente producto",product);
-    this.toHide();
 
-  }
+  addToCar(product:Item) {
+    if(this.size){
+      let quantity: Quantity = {S: 0, M: 0, L: 0};
+      quantity[this.size] = this.counter;
+      this.service.addToCar(product, quantity);
+      this.toHide();
+    }
   }
 }

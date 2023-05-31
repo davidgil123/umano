@@ -12,9 +12,9 @@
       <div class="container__body--size">
         <p>TALLA: {{size}}</p>
         <div class="container__body--size-values">
-          <p (click)="chooseSize('S')" [ngClass]="{'dark' : size=='S'}">S</p>
-          <p (click)="chooseSize('M')" [ngClass]="{'dark' : size=='M'}">M</p>
-          <p (click)="chooseSize('L')" [ngClass]="{'dark' : size=='L'}">L</p>
+          <p (click)="chooseSize(sizes.S)" [ngClass]="{'dark' : size=='S'}">S</p>
+          <p (click)="chooseSize(sizes.M)" [ngClass]="{'dark' : size=='M'}">M</p>
+          <p (click)="chooseSize(sizes.L)" [ngClass]="{'dark' : size=='L'}">L</p>
         </div>
       </div>
       <div class="container__body--interactive">
@@ -23,7 +23,7 @@
           <button>{{counter}}</button>
           <button class="clik"(click)="add()">+</button>
         </div>
-        <button (click)="addToCar(item)">AGREGAR AL CARRITO</button>
+        <button [disabled]="!size" (click)="addToCar(item)">AGREGAR AL CARRITO</button>
       </div>
   </section>
 </section>

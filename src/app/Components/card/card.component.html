@@ -9,7 +9,7 @@
       <p>L</p>
     </div>
     <div class="container__icons">
-      <img src="../../../assets/Icons/Agregar al carro.png" alt="Imagen 1">
+      <button (click)="addToCart(product)"><img src="../../../assets/Icons/Agregar al carro.png" alt="Imagen 1"></button>
       <button (click)="showDetail(product)"><img src="../../../assets/Icons/Detalle.png" alt="Imagen 1"></button>
     </div>
 
@@ -17,6 +17,6 @@
 </section>
 
 
-<section class="container__detalle">
+<section class="container__detalle modal">
   <app-card-detail *ngIf="service.detail" [item]="product"></app-card-detail>
 </section>

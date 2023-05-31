@@ -1,21 +1,21 @@
 .container{
-  display: inline-flex;
+  display: flex;
   text-align: center;
-  background-color: rgb(255, 235, 205);
+  background-color: #ffebcd;
   color: black;
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 
   &__tittle{
     font-size: 0.8rem;
     width: 75%;
     margin-left: 18rem;
-
   }
   &__shared{
     width: 25%;
-
   }
   }
 
