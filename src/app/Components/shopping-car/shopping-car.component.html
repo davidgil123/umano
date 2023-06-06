@@ -2,24 +2,24 @@
   <h1 class="left">Productos seleccionados</h1>
   <span (click)="service.showShoppingCar()" class="close right"><img src="../../../assets/Icons/cerrar.PNG" alt="Cerrar"></span>
   <hr>
-  <ng-container *ngFor="let item of service.productsCard">
+  <ng-container class="main2" *ngFor="let item of service.productsCard">
     <ng-container *ngFor="let size of sizes">
-      <section class="container" *ngIf="item.quantity[size] > 0">
-        <section class="container__image">
+      <section class="container2" *ngIf="item.quantity[size] > 0">
+        <section class="container2__image">
           <img [src]="item.image" alt="imagen 1">
 
         </section>
-        <section class="container__body">
+        <section class="container2__body">
             <span (click)="disAllOfItemSize(item, size)"><img src="../../../assets/Icons/cerrar.PNG" alt="Cerrar"></span>
             <p>{{item.title}}</p>
             <p>{{item.price}}</p>
             <p>{{size}}</p>
-            <div class="container__body--interactive">
-              <div>
+            <div class="container2__body--interactive">
+              <div class="itemPrice">
                 <p>
                   {{item.price|currency}}
                 </p>
-                <div class="container__body--interactive__add">
+                <div class="container2__body--interactive__add">
                 <button class="clik" (click)="dis(item, size)">-</button>
                 <button>{{item.quantity[size]}}</button>
                 <button class="clik"(click)="add(item, size)">+</button>
