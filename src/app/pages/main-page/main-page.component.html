@@ -1,16 +1,18 @@
 <app-main-header></app-main-header>
-<app-shopping-car class="modal2" *ngIf="service.isVisibleShoppingCar"></app-shopping-car>
+<app-shopping-car class="modal3" *ngIf="service.isVisibleShoppingCar"></app-shopping-car>
 <section class="container2">
   <app-hidden-menu></app-hidden-menu>
   <app-main-menu></app-main-menu>
   <app-logo></app-logo>
   <app-second-menu></app-second-menu>
   <app-interactive-options></app-interactive-options>
+    <span class="whatsapp"><img src="../../../assets/Icons/whatsapp.PNG" alt="whatsapp"></span>
 
 </section>
 <img class="main__image" src="../../../assets/Image/imagen de inicio.png" alt="Imagen de inicio ">
 <hr>
-<div id="carouselExample" class="carousel slide">
+
+<div id="carousel1" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <app-card></app-card>
@@ -19,13 +21,45 @@
       <app-card></app-card>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+    <span><</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+    <span>></span>
+  </button>
+</div>
+
+<div id="carousel2" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <app-card></app-card>
+    </div>
+    <div class="carousel-item">
+      <app-card></app-card>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+    <span><</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+    <span>></span>
+  </button>
+</div>
+
+<div id="carousel3" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <app-card></app-card>
+    </div>
+    <div class="carousel-item">
+      <app-card></app-card>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+    <span><</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+    <span>></span>
   </button>
 </div>
   <app-shared-footer></app-shared-footer>

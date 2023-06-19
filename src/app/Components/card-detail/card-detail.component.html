@@ -1,23 +1,23 @@
-<section class="container">
-  <section class="container__image">
+<section class="container2">
+  <section class="container2__image">
     <img [src]="item.image" alt="imagen 1">
     <button>VER MÁS</button>
 
   </section>
-  <section class="container__body">
+  <section class="container2__body">
     <span (click)="toHide()"><img src="../../../assets/Icons/cerrar.PNG" alt="Cerrar"></span>
     <p>{{item.title}}</p>
     <p>{{item.price}}</p>
     <p>{{item.description}}</p>
-      <div class="container__body--size">
+      <div class="container2__body--size">
         <p>TALLA: {{size}}</p>
-        <div class="container__body--size-values">
+        <div class="container2__body--size-values">
           <p (click)="chooseSize(sizes.S)" [ngClass]="{'dark' : size=='S'}">S</p>
           <p (click)="chooseSize(sizes.M)" [ngClass]="{'dark' : size=='M'}">M</p>
           <p (click)="chooseSize(sizes.L)" [ngClass]="{'dark' : size=='L'}">L</p>
         </div>
       </div>
-      <div class="container__body--interactive">
+      <div class="container2__body--interactive">
         <div>
           <button class="clik" (click)="dis()" *ngIf="counter>1">-</button>
           <button>{{counter}}</button>

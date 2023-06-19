@@ -51,4 +51,30 @@ app-main-header{
   margin: 0;
   padding: 0;
 }
+.carousel-control-prev{
+  width: 5%;
+  height: 10%;
+  margin-top: 10%;
+  color: black;
+  font-size: 3.5rem;
+}
+.carousel-control-next{
+  width: 5%;
+  height: 10%;
+  margin-top: 10%;
+  color: black;
+  color: black;
+  font-size: 3.5rem;
+}
+.whatsapp{
+  position: fixed;
+  bottom: 1rem;
+  right: 4rem;
+  z-index: 1;
+  img{
+    cursor: pointer;
+  }
+
+}
+
 

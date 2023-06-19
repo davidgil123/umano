@@ -9,7 +9,6 @@ import { SecondMenuComponent } from '../Components/second-menu/second-menu.compo
 import { InteractiveOptionsComponent } from '../Components/interactive-options/interactive-options.component';
 import { RoutingHistoryComponent } from '../Components/routing-history/routing-history.component';
 import { CardComponent } from '../Components/card/card.component';
-import { FooterInteractiveComponent } from '../Components/footer-interactive/footer-interactive.component';
 import { MainFooterComponent } from '../Components/main-footer/main-footer.component';
 import { SharedFooterComponent } from '../Components/shared-footer/shared-footer.component';
 import { MainPageComponent } from '../pages/main-page/main-page.component';
@@ -20,7 +19,7 @@ import { ShoppingCarComponent } from '../Components/shopping-car/shopping-car.co
 
 @NgModule({
   declarations: [MainHeaderComponent, SharedHeaderComponent, HiddenMenuComponent,MainMenuComponent,LogoComponent,
-    SecondMenuComponent,InteractiveOptionsComponent, RoutingHistoryComponent, CardComponent, FooterInteractiveComponent,
+    SecondMenuComponent,InteractiveOptionsComponent, RoutingHistoryComponent, CardComponent,
     MainFooterComponent, SharedFooterComponent,MainPageComponent,CardDetailComponent,ShoppingCarComponent
   ],
   imports: [
@@ -28,7 +27,7 @@ import { ShoppingCarComponent } from '../Components/shopping-car/shopping-car.co
   ],
   exports: [
     MainHeaderComponent, SharedHeaderComponent, HiddenMenuComponent, MainMenuComponent, LogoComponent,
-    SecondMenuComponent,InteractiveOptionsComponent, RoutingHistoryComponent, CardComponent, FooterInteractiveComponent,
+    SecondMenuComponent,InteractiveOptionsComponent, RoutingHistoryComponent, CardComponent,
     MainFooterComponent, SharedFooterComponent, MainPageComponent,CardDetailComponent,ShoppingCarComponent
   ]
 })
