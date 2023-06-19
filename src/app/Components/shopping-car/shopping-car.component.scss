@@ -1,12 +1,14 @@
 :host {
   width: 40vw;
   left: 30vw;
-  top: -1vh;
+  top: 5vh;
+
 }
 
 .main{
   background-color: white;
   color: black;
+  height: 90vh;
   h1{
     margin-left: 0.5rem;
     margin-top: 0.5rem;
@@ -57,6 +59,7 @@
   flex-wrap: wrap;
   justify-content: center;
   background-color: white;
+  height: 30vh;
 
   hr{
     height: 1px;
